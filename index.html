@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apoio à Terceira Idade</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f8;
+      color: #222222;
+      transition: font-size 0.2s ease;
+    }
+
+    header {
+      background-color: #0056b3;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 10px 0;
+      font-size: 2rem;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+
+    .cartao {
+      background-color: #ffffff;
+      border: 2px solid #cccccc;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #0056b3;
+      margin-top: 0;
+    }
+
+    .lista-servicos {
+      list-style: none;
+      padding: 0;
+    }
+
+    .lista-servicos li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eeeeee;
+      font-weight: bold;
+    }
+
+    button {
+      background-color: #28a745;
+      color: #ffffff;
+      border: none;
+      padding: 15px 25px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    #btn-fonte {
+      background-color: #ffffff;
+      color: #0056b3;
+      padding: 8px 15px;
+      font-size: 0.9rem;
+      border: 1px solid #ffffff;
+    }
+
+    #btn-fonte:hover {
+      background-color: #e6e6e6;
+    }
+
+    .status {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #e9ecef;
+      margin-top: 30px;
+    }
+    .fonte-grande {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Apoio à Terceira Idade</h1>
+    <button id="btn-fonte" onclick="alternarTamanhoFonte()">Aumentar Texto</button>
+  </header>
+
+  <main>
+    <section class="cartao">
+      <h2>Como Podemos Ajudar?</h2>
+      <p>Oferecemos suporte simples e direto para facilitar o seu dia a dia. Escolha uma das opções abaixo:</p>
+      
+      <ul class="lista-servicos">
+        <li> Suporte para uso de celular e internet</li>
+        <li> Agendamento de consultas médicas</li>
+        <li> Acompanhamento em passeios e compras</li>
+      </ul>
+    </section>
+
+    <section class="cartao">
+      <h2>Precisa de Ajuda Rápida?</h2>
+      <p>Clique no botão abaixo para simular um pedido de contato de um voluntário.</p>
+      <button class="btn-principal" onclick="solicitarAjuda()">Pedir Ajuda Agora</button>
+      <p id="mensagem-status" class="status"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Central de Atendimento: <strong>0800 123 4567</strong></p>
+  </footer>
+  <script>
+    function alternarTamanhoFonte() {
+      const corpo = document.body;
+      const botao = document.getElementById('btn-fonte');
+      
+      corpo.classList.toggle('fonte-grande');
+      
+      if (corpo.classList.contains('fonte-grande')) {
+        botao.textContent = 'Diminuir Texto';
+      } else {
+        botao.textContent = 'Aumentar Texto';
+      }
+    }
+
+    // Função para simular a solicitação de apoio
+    function solicitarAjuda() {
+      const status = document.getElementById('mensagem-status');
+      status.textContent = 'Solicitação enviada com sucesso! Um voluntário entrará em contato em breve.';
+    }
+  </script>
+
+</body>
+</html>
